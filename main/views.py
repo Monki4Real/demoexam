@@ -32,6 +32,7 @@ def CreateStatement(request):
         statement.body = request.POST.get('body')
         statement.date_time = request.POST.get('date_time') 
         statement.save()
+        return redirect('profile')
     return render(request, 'main/createStatement.html')
 
 @staff_member_required
